@@ -1,0 +1,26 @@
+﻿@model FirstSignalR.Model.ChatMessage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Message</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Create", "Home"))
+        {
+            @Html.LabelFor(p => p.Name)
+            @Html.EditorFor(p => p.Name)
+            <br />
+            @Html.LabelFor(p => p.Message)
+            @Html.EditorFor(p => p.Message)
+            <br />
+            @Html.LabelFor(p => p.SessionId)
+            @Html.EditorFor(p => p.SessionId)
+            <input type="submit" value="Submit"/>
+        }
+    </div>
+</body>
+</html>

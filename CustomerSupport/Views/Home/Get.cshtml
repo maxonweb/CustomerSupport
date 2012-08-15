@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="../../Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/jquery.signalR-0.5.2.min.js" type="text/javascript"></script>
+        <script src="/SignalR/hubs" type="text/javascript" ></script>
+        <title>title</title>
+        <script>
+            $(function () {
+                $.connection.hub.logging = true;
+                var messageHub = $.connection.chatMessageHub;
+                messageHub.Send = function (name, message, sessionId) {
+                    alert('Server called addMessage');
+                    $('#txtMessage').val(message);
+                    $('#txtName').val(name);
+                    $('#txtSessionId').val(sessionId);
+                };
+                $.connection.hub.start();
+            });
+       \=]
+        [p  q2we-</script>/head>
+    <body>
+        <div>
+            <input type="text" id="txtMessage"/>
+            <input type="text" id="txtName"/>
+            <input type="text" id="txtSessionId"/>
+        </div>
+    </body>
+</html>
